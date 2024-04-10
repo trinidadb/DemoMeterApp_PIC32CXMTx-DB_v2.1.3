@@ -1,0 +1,15 @@
+"C:\Program Files\IAR Systems\Embedded Workbench 9.2\arm\bin\armPROC.dll" 
+
+"C:\Program Files\IAR Systems\Embedded Workbench 9.2\arm\bin\armJLINK.dll" 
+
+"C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\Debug\Exe\metrology_demometer_flash.out" 
+
+--plugin="C:\Program Files\IAR Systems\Embedded Workbench 9.2\arm\bin\armLibSupportUniversal.dll" 
+
+--device_macro="C:\Program Files\IAR Systems\Embedded Workbench 9.2\arm/config/debugger/Microchip/PIC32CXMT.dmac" 
+
+--flash_loader="C:\Program Files\IAR Systems\Embedded Workbench 9.2\arm/config/flashloader/Microchip/pic32cx20xxmt/pic32cx20xxmt-flash.board" 
+
+
+
+

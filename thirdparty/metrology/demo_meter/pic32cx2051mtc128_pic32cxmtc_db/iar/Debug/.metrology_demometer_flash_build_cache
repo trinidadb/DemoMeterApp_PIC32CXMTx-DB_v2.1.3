@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BuildDb>
+    <Tool>
+        <Name>linker</Name>
+        <Parent>
+            <Path>C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\Debug\Exe\metrology_demometer_flash.out</Path>
+            <Output>
+                <Path>C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\Debug\List\metrology_demometer_flash.map</Path>
+            </Output>
+        </Parent>
+    </Tool>
+</BuildDb>
