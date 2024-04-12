@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "C:\Program Files\IAR Systems\Embedded Workbench 9.2\common\bin\cspybat" -f "C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\settings\metrology_demometer_flash.Debug.general.xcl" --backend -f "C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\settings\metrology_demometer_flash.Debug.driver.xcl" 
+& "C:\Program Files\IAR Systems\Embedded Workbench 9.2_2\common\bin\cspybat" -f "C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\settings\metrology_demometer_flash.Debug.general.xcl" --backend -f "C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\settings\metrology_demometer_flash.Debug.driver.xcl" 
 }
 else
 {
-& "C:\Program Files\IAR Systems\Embedded Workbench 9.2\common\bin\cspybat" -f "C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\settings\metrology_demometer_flash.Debug.general.xcl" --debug_file=$debugfile --backend -f "C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\settings\metrology_demometer_flash.Debug.driver.xcl" 
+& "C:\Program Files\IAR Systems\Embedded Workbench 9.2_2\common\bin\cspybat" -f "C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\settings\metrology_demometer_flash.Debug.general.xcl" --debug_file=$debugfile --backend -f "C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\settings\metrology_demometer_flash.Debug.driver.xcl" 
 }

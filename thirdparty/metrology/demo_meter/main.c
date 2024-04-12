@@ -250,6 +250,21 @@ static void configure_command_usart(void)
 	usart_serial_init((Usart *)CONF_COMMAND_UART, &uart_serial_options);
 }
 
+static void configure_esp_usart(void)
+{     
+        /* UART3 */
+        usart_serial_options_t uart_serial_options = {
+		.baudrate = CONF_ESP_UART_BAUDRATE,
+		.charlength = CONF_ESP_UART_CHAR_LENGTH,
+		.paritytype = CONF_ESP_UART_PARITY,
+		.stopbits = CONF_ESP_UART_STOP_BITS,
+	};
+
+        /* Configure console UART3. */
+	sysclk_enable_peripheral_clock(CONF_ESP_UART_ID);
+	usart_serial_init((Usart *)CONF_ESP_UART, &uart_serial_options);
+}
+
 
 /**
  * \brief Configure the OPTO UART.
@@ -478,7 +493,7 @@ void normal_mode(void)
 				  tamper_date.month, tamper_date.day, tamper_date.year,
 				  tamper_time.hour, tamper_time.minute, tamper_time.second, gpbr0_val));
 		}
-
+                
 		/* BaseTimer Process */
 		BaseTimerProcess();
 
@@ -557,6 +572,9 @@ int main(void)
 
 	/* Configure serial command console */
 	configure_command_usart();
+        
+        /* Configure serial esp usart */
+	configure_esp_usart();
 
 	/* Set Normal Mode by default */
 	Vsys.mode = NORMAL_MODE;

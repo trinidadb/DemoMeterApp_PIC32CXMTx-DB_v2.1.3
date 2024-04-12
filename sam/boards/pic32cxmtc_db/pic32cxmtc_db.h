@@ -250,6 +250,20 @@
 /* @} */
 
 /**
+ * \name Console Port USART ESP pins definitions
+ * @{
+ */
+#define PINS_ESP_UART                  (PIO_PA16A_FLEXCOM3_IO0 | PIO_PA17A_FLEXCOM3_IO1)
+#define PINS_ESP_UART_FLAGS            (IOPORT_MODE_MUX_A)
+#define PINS_ESP_UART_PORT             IOPORT_PIOA
+#define PINS_ESP_UART_MASK             (PIO_PA16A_FLEXCOM3_IO0 | PIO_PA17A_FLEXCOM3_IO1)
+#define PINS_ESP_UART_PIO              PIOA
+#define PINS_ESP_UART_ID               ID_PIOA
+#define PINS_ESP_UART_TYPE             IOPORT_MODE_MUX_A
+#define PINS_ESP_UART_ATTR             IOPORT_MODE_DEFAULT
+/* @} */
+
+/**
  * \name UART Opto-port pins (URXD, UTXD) definitions
  * @{
  */
