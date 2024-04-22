@@ -142,6 +142,7 @@ typedef struct {
 typedef enum {
 	COMPROC_CONSOLE_ID = 0,
 	COMPROC_OPTO_ID,
+        COMPROC_ZW_ID,
         COMPROC_ESP_ID,
 //	COMPROC_XPLAIN_ID,     /* Reserved for future uses */
 //	COMPROC_MIKROBUS_ID,   /* Reserved for future uses */
@@ -169,8 +170,10 @@ extern command_t VCom;
 void CommandInit(void);
 void CommandConsoleProcess(void);
 void CommandEspProcess(void);
+void CommandZwProcess(void);
 void CommandOptoProcess(void);
 void CommandSendConsoleMsg(const char *msg);
+void CommandSendZwMsg(const char *msg);
 void CommandSendEspMsg(const char *msg);
 
 /* / @cond 0 */
