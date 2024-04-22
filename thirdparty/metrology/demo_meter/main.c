@@ -254,10 +254,10 @@ static void configure_zw_usart(void)
 {     
         /* UART1 */
         usart_serial_options_t uart_serial_options = {
-		.baudrate = CONF_ESP_UART_BAUDRATE,
-		.charlength = CONF_ESP_UART_CHAR_LENGTH,
-		.paritytype = CONF_ESP_UART_PARITY,
-		.stopbits = CONF_ESP_UART_STOP_BITS,
+		.baudrate = CONF_ZW_UART_BAUDRATE,
+		.charlength = CONF_ZW_UART_CHAR_LENGTH,
+		.paritytype = CONF_ZW_UART_PARITY,
+		.stopbits = CONF_ZW_UART_STOP_BITS,
 	};
 
         /* Configure console UART3. */
