@@ -34,6 +34,8 @@
 #ifndef COMMAND_H_INCLUDED
 #define COMMAND_H_INCLUDED
 
+extern volatile uint8_t esp_write_count; 
+
 /* / @cond 0 */
 /**INDENT-OFF**/
 #ifdef __cplusplus
@@ -41,9 +43,11 @@ extern "C" {
 #endif
 /**INDENT-ON**/
 /* / @endcond */
-
+ 
+  
 #include "pdc.h"
 #include "metrology.h"
+  
 
 /* Secure Password (3 bytes) */
 #define COMPROC_SEC_PWD                 "PIC"
@@ -166,6 +170,7 @@ typedef struct {
 } command_t;
 
 extern command_t VCom;
+
 
 void CommandInit(void);
 void CommandConsoleProcess(void);

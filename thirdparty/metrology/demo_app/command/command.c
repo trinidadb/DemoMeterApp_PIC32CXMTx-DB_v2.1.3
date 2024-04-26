@@ -60,6 +60,9 @@
 #include "dwdt.h"
 #include "coproc.h"
 #include "icm.h"
+#include "rtcproc.h"
+
+
 
 /* / @cond 0 */
 /**INDENT-OFF**/
@@ -69,6 +72,8 @@ extern "C" {
 /**INDENT-ON**/
 /* / @endcond */
 
+volatile uint8_t esp_write_count = 0;  
+  
 command_t VCom;
 
 static uint8_t spuc_pdc_buff[FRAME_MAX_SEND_LEN];
@@ -2243,12 +2248,72 @@ void CONF_ZW_UART_Handler(void)
  * \brief ESP UART interrupt Handler
  */
 //uint32_t ul_cnt = 0;
+static void _print_uart_par(void);
+
 void CONF_ESP_UART_Handler(void)
 {
 	if (_process_rcv_data(COMPROC_ESP_ID)) {
 		TaskPutIntoQueue(CommandEspProcess);
 		ul_cnt++;
 	}
+        else if(esp_write_count == 7){
+                //_print_uart_par();
+                CommandSendEspMsg("AT");
+                esp_write_count = 0;
+        }
+}
+
+
+static void _print_uart_par(void)
+{
+      char message[256];
+      char signT = ' ';
+      char signA = ' ';
+      char signB = ' ';
+      char signC = ' ';
+      char signN = ' ';
+      
+      
+      snprintf(message, sizeof(message), "RTC is (yy-mm-dd hh:mm:ss): %02u-%02u-%02u %02u:%02u:%02u\r\n", VRTC.date.year - 2000, VRTC.date.month, VRTC.date.day, VRTC.time.hour, VRTC.time.minute, VRTC.time.second);
+      CommandSendEspMsg(message); 
+      
+      snprintf(message, sizeof(message), "Voltage: Ua=%.3fV Ub=%.3fV Uc=%.3fV\r\n", (float)VAFE.RMS[Ua]/10000, (float)VAFE.RMS[Ub]/10000, (float)VAFE.RMS[Uc]/10000);   
+      CommandSendEspMsg(message);
+  
+      snprintf(message, sizeof(message), "Current: Ia=%.4fA Ib=%.4fA Ic=%.4fA Ini=%.4fA Inm=%.4fA Inmi=%.4fA\r\n", (float)VAFE.RMS[Ia]/10000, (float)VAFE.RMS[Ib]/10000, (float)VAFE.RMS[Ic]/10000, (float)VAFE.RMS[Ini]/10000, (float)VAFE.RMS[Inm]/10000, (float)VAFE.RMS[Inmi]/10000);
+      CommandSendEspMsg(message);
+      
+      /* Get signs of the measurements */
+      if (VAFE.ST.BIT.qt_dir) { signT = '-'; }
+      if (VAFE.ST.BIT.qa_dir) { signA = '-'; }
+      if (VAFE.ST.BIT.qb_dir) { signB = '-'; }
+      if (VAFE.ST.BIT.qc_dir) { signC = '-'; }
+      /* Read Reactive Power */  
+      snprintf(message, sizeof(message), "ReactivePower: Qt=%c%.1fVar Qa=%c%.1fVar Qb=%c%.1fVar Qc=%c%.1fVar\r\n", signT, (float)VAFE.RMS[Qt]/10, signA, (float)VAFE.RMS[Qa]/10, signB, (float)VAFE.RMS[Qb]/10, signC, (float)VAFE.RMS[Qc]/10);
+      CommandSendEspMsg(message);
+
+      /* Get signs of the measurements */
+      if (VAFE.ST.BIT.pt_dir) { signT = '-'; }
+      if (VAFE.ST.BIT.pa_dir) { signA = '-'; }
+      if (VAFE.ST.BIT.pb_dir) { signB = '-'; }
+      if (VAFE.ST.BIT.pc_dir) { signC = '-'; }
+      snprintf(message, sizeof(message), "ActivePower: Pt=%c%.1fW Pa=%c%.1fW Pb=%c%.1fW Pc=%c%.1fW\r\n",signT, (float)VAFE.RMS[Pt]/10, signA, (float)VAFE.RMS[Pa]/10, signB, (float)VAFE.RMS[Pb]/10, signC, (float)VAFE.RMS[Pc]/10);
+      CommandSendEspMsg(message); 
+      
+      snprintf(message, sizeof(message), "ApparentPower: St=%.1fVA Sa=%.1fVA Sb=%.1fVA Sc=%.1fVA\r\n",(float)VAFE.RMS[St]/10, (float)VAFE.RMS[Sa]/10, (float)VAFE.RMS[Sb]/10, (float)VAFE.RMS[Sc]/10);
+      CommandSendEspMsg(message);
+      
+      snprintf(message, sizeof(message), "Frequency: Freq=%.2fHz\r\n", (float)VAFE.RMS[Freq]/100);
+      CommandSendEspMsg(message);
+      
+      /* Get signs of the measurements */
+      if (VAFE.RMS[AngleA] & 0x80000000) { signA = '-'; }
+      if (VAFE.RMS[AngleB] & 0x80000000) { signB = '-'; }
+      if (VAFE.RMS[AngleC] & 0x80000000) { signC = '-'; }
+      if (VAFE.RMS[AngleN] & 0x80000000) { signN = '-'; }
+      /* Read Angle */
+      snprintf(message, sizeof(message), "VoltageAndCurrentAngle: Angle_A=%c%.3f Angle_B=%c%.3f Angle_C=%c%.3f Angle_N=%c%.3f\r\n", signA, (float)(VAFE.RMS[AngleA] & 0xFFFFFFF)/100000, signB, (float)(VAFE.RMS[AngleB] & 0xFFFFFFF)/100000, signC, (float)(VAFE.RMS[AngleC] & 0xFFFFFFF)/100000, signN, (float)(VAFE.RMS[AngleN] & 0xFFFFFFF)/100000);
+      CommandSendEspMsg(message);
 }
 
 /**
@@ -2638,17 +2703,17 @@ void CommandEspProcess(void)
 		}
 		_send_data(COMPROC_ESP_ID);
 
-		com_cmd = _get_terminal_cmd(com_ptr->rcv_buff[buf_idx]);
+		com_cmd = TER_CMD_PAR; //_get_terminal_cmd(com_ptr->rcv_buff[buf_idx]);
 
 		switch(com_cmd) {
-		case TER_CMD_RTCR:
-			_process_cmd_rtcr3(com_ptr);
+		case TER_CMD_PAR:
+			_process_cmd_par(com_ptr);
 			break;
 
 		default:
 			/* Unknown terminal command */
 			com_ptr->send_len = sprintf((char *)com_ptr->send_buff, "%s", "Unsupported Command !\r\n");
-			_send_data(COMPROC_CONSOLE_ID);
+			_send_data(COMPROC_ESP_ID);
 			break;
 		}
 

@@ -49,6 +49,7 @@
 #include "utils.h"
 #include "command.h"
 #include "extmem.h"
+#include "conf_command_serial.h"
 
 /* / @cond 0 */
 /**INDENT-OFF**/
@@ -65,6 +66,8 @@ const char Months_DateTable[12][3] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", 
 const uint8_t Day_weekTableD[12] = {6, 2, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4};
 
 static uint8_t suc_rtc_save_min_counter = RTC_MIN_STORE_BACKUP;
+
+extern volatile uint8_t esp_write_count;  
 
 /* / @cond 0 */
 /**INDENT-OFF**/
@@ -180,6 +183,7 @@ void RTC_Handler(void)
 		LOG_APP_DEMO_DEBUG(("RTC_Handler: RTC_SR_ALARM[%d]\r\n", (uint8_t)VRTC.time.minute));
 
 	} else if ((ul_status & RTC_SR_SEC) == RTC_SR_SEC) {
+          
 
 		/** 1 Interrupt per SECOND **/
 		rtc_disable_interrupt(RTC, RTC_IDR_SECDIS);
@@ -197,6 +201,7 @@ void RTC_Handler(void)
 
 		/** Launch Tasks per SECOND **/
 		TaskPutIntoQueue(EventProcess);
+                esp_write_count++; NVIC_SetPendingIRQ(CONF_ESP_UART_IRQn);
 		if (VCom.lamptimer) {
 			VCom.lamptimer--;
 		}
