@@ -193,11 +193,26 @@ void board_init(void)
 	flexcom_enable(FLEXCOM0);
 	flexcom_set_opmode(FLEXCOM0, FLEXCOM_USART);
 #endif
-
+        
+#ifdef CONF_BOARD_UART_ZW        
+        ioport_set_port_peripheral_mode(PINS_ZW_UART_PORT, PINS_ZW_UART, PINS_ZW_UART_FLAGS);
+	/* Enable the peripheral and set USART mode. */
+	flexcom_enable(FLEXCOM1);
+	flexcom_set_opmode(FLEXCOM1, FLEXCOM_USART);
+#endif
+        
+        /* Configure UART3 pins */
+#ifdef CONF_BOARD_UART_ESP        
+        ioport_set_port_peripheral_mode(PINS_ESP_UART_PORT, PINS_ESP_UART, PINS_ESP_UART_FLAGS);
+	/* Enable the peripheral and set USART mode. */
+	flexcom_enable(FLEXCOM3);
+	flexcom_set_opmode(FLEXCOM3, FLEXCOM_USART);
+#endif
 	/* Configure UART Opto-port pins */
 #ifdef CONF_BOARD_UART_OPTO
 	ioport_set_port_peripheral_mode(PINS_OPTO_UART_PORT, PINS_OPTO_UART, PINS_OPTO_UART_FLAGS);
 #endif
+        
 
 #ifdef CONF_BOARD_QSPI
 	ioport_set_pin_peripheral_mode(QSPI_QSCK_GPIO, QSPI_QSCK_FLAGS);

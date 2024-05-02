@@ -55,6 +55,43 @@
 /** Command UART Handler */
 #define CONF_COMMAND_UART_Handler       FLEXCOM0_Handler
 
+
+/** Command UART Interface */
+#define CONF_ZW_UART               USART1
+/** Command UART Interface */
+#define CONF_ZW_UART_ID            ID_FLEXCOM1
+/** Command UART Baudrate setting */
+#define CONF_ZW_UART_BAUDRATE      (115200UL)
+/** Command UART Parity setting */
+#define CONF_ZW_UART_PARITY        US_MR_PAR_NO
+/** Command UART Char Length setting */
+#define CONF_ZW_UART_CHAR_LENGTH   US_MR_CHRL_8_BIT
+/** Command UART Stop bits setting */
+#define CONF_ZW_UART_STOP_BITS     US_MR_NBSTOP_1_BIT
+/** Command UART IRQn */
+#define CONF_ZW_UART_IRQn          FLEXCOM1_IRQn
+/** Command UART Handler */
+#define CONF_ZW_UART_Handler       FLEXCOM1_Handler
+
+
+/** Command UART Interface */
+#define CONF_ESP_UART               USART3
+/** Command UART Interface */
+#define CONF_ESP_UART_ID            ID_FLEXCOM3
+/** Command UART Baudrate setting */
+#define CONF_ESP_UART_BAUDRATE      (9600UL) //(115200UL)
+/** Command UART Parity setting */
+#define CONF_ESP_UART_PARITY        US_MR_PAR_NO
+/** Command UART Char Length setting */
+#define CONF_ESP_UART_CHAR_LENGTH   US_MR_CHRL_8_BIT
+/** Command UART Stop bits setting */
+#define CONF_ESP_UART_STOP_BITS     US_MR_NBSTOP_1_BIT
+/** Command UART IRQn */
+#define CONF_ESP_UART_IRQn          FLEXCOM3_IRQn
+/** Command UART Handler */
+#define CONF_ESP_UART_Handler       FLEXCOM3_Handler
+
+
 /** Opto UART Interface */
 #define CONF_OPTO_UART                  UART
 /** Opto UART Interface */

@@ -6,7 +6,7 @@
 
 "-p" 
 
-"C:\Program Files\IAR Systems\Embedded Workbench 9.2\arm\config\debugger\Microchip\PIC32CX2051MTC128.ddf" 
+"C:\Program Files\IAR Systems\Embedded Workbench 9.2_2\arm\config\debugger\Microchip\PIC32CX2051MTC128.ddf" 
 
 "--drv_verify_download" 
 

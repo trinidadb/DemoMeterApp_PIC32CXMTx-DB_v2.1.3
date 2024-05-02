@@ -34,6 +34,8 @@
 #ifndef COMMAND_H_INCLUDED
 #define COMMAND_H_INCLUDED
 
+extern volatile uint8_t esp_write_count; 
+
 /* / @cond 0 */
 /**INDENT-OFF**/
 #ifdef __cplusplus
@@ -41,9 +43,11 @@ extern "C" {
 #endif
 /**INDENT-ON**/
 /* / @endcond */
-
+ 
+  
 #include "pdc.h"
 #include "metrology.h"
+  
 
 /* Secure Password (3 bytes) */
 #define COMPROC_SEC_PWD                 "PIC"
@@ -142,6 +146,8 @@ typedef struct {
 typedef enum {
 	COMPROC_CONSOLE_ID = 0,
 	COMPROC_OPTO_ID,
+        COMPROC_ZW_ID,
+        COMPROC_ESP_ID,
 //	COMPROC_XPLAIN_ID,     /* Reserved for future uses */
 //	COMPROC_MIKROBUS_ID,   /* Reserved for future uses */
 	COMPROC_NUM_IDS
@@ -165,10 +171,15 @@ typedef struct {
 
 extern command_t VCom;
 
+
 void CommandInit(void);
 void CommandConsoleProcess(void);
+void CommandEspProcess(void);
+void CommandZwProcess(void);
 void CommandOptoProcess(void);
 void CommandSendConsoleMsg(const char *msg);
+void CommandSendZwMsg(const char *msg);
+void CommandSendEspMsg(const char *msg);
 
 /* / @cond 0 */
 /**INDENT-OFF**/

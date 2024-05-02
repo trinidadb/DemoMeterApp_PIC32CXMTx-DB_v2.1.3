@@ -1,265 +1,265 @@
-"C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\common\services\sleepmgr\sam\sleepmgr.c"
+"C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\common\services\sleepmgr\sam\sleepmgr.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -funsigned-char
 -MD
 -MF
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\Debug\BrowseInfo\sam_3596523682536596269.dir\sleepmgr.pbi.dep
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\Debug\BrowseInfo\sam_3596523682536596269.dir\sleepmgr.pbi.dep
 -o
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\Debug\BrowseInfo\sam_3596523682536596269.dir\sleepmgr.pbi
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\Debug\BrowseInfo\sam_3596523682536596269.dir\sleepmgr.pbi
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\common\services\sleepmgr\sam
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\common\services\sleepmgr\sam
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\utils\cmsis\pic32cx\include
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\utils\cmsis\pic32cx\include\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\history
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\history\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\presskey
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\presskey\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\utils\fpu
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\utils\fpu\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\icm
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\icm\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\common\services\ioport
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\common\services\ioport\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\boards\pic32cxmtc_db
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\boards\pic32cxmtc_db\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\slcdc
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\slcdc\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\utils
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\utils\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\rtt
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\rtt\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\common\boards
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\common\boards\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\qspi\pic32cx
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\qspi\pic32cx\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\pdc
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\pdc\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\boards
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\boards\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\utils\cmsis\pic32cx\source\templates
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\utils\cmsis\pic32cx\source\templates\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\uart
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\uart\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\chipid
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\chipid\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\rtc
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\rtc\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\utils\preprocessor
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\utils\preprocessor\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\supc\pic32cx
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\supc\pic32cx\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\metrology
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\metrology\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\energy
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\energy\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\tou
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\tou\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\gpbr
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\gpbr\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\common\utils
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\common\utils\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\event
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\event\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\usart
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\usart\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\cmcc
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\cmcc\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\common\services\serial\pic32cx_uart
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\common\services\serial\pic32cx_uart\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\common\components\memory\qspi_flash\sst26vfxxx
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\common\components\memory\qspi_flash\sst26vfxxx\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\common\services\delay
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\common\services\delay\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\sfr
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\sfr\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\components\display\cl010
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\components\display\cl010\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\rtcproc
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\rtcproc\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\command
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\command\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\display
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\display\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\common\services\clock
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\common\services\clock\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\flexcom
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\flexcom\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\pmc\pic32cx
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\pmc\pic32cx\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\ipc
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\ipc\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\efc
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\efc\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\pio\pic32cx
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\pio\pic32cx\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\utils\header_files
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\utils\header_files\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\demand
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\demand\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\coproc
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\coproc\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\common\services\serial
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\common\services\serial\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\matrix\pic32cx
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\matrix\pic32cx\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\utils
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\utils\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\common\utils\stdio\stdio_serial
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\common\utils\stdio\stdio_serial\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\rstc
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\rstc\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\kenerl
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\kenerl\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\common\services\sleepmgr
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\common\services\sleepmgr\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\dwdt
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\..\..\sam\drivers\dwdt\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\basetimer
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\basetimer\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\extmem
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\..\..\..\demo_app\extmem\
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\.
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar\.\
 -I
-C:\Program Files\IAR Systems\Embedded Workbench 9.2\arm\CMSIS\Core\Include\
+C:\Program Files\IAR Systems\Embedded Workbench 9.2_2\arm\CMSIS\Core\Include\
 -I
-C:\Program Files\IAR Systems\Embedded Workbench 9.2\arm\CMSIS\DSP\Include\
+C:\Program Files\IAR Systems\Embedded Workbench 9.2_2\arm\CMSIS\DSP\Include\
 -I
-C:\Program Files\IAR Systems\Embedded Workbench 9.2\arm\inc\c\aarch32
+C:\Program Files\IAR Systems\Embedded Workbench 9.2_2\arm\inc\c\aarch32
 -I
-C:\Program Files\IAR Systems\Embedded Workbench 9.2\arm\inc
+C:\Program Files\IAR Systems\Embedded Workbench 9.2_2\arm\inc
 -I
-C:\Program Files\IAR Systems\Embedded Workbench 9.2\arm\inc\c
+C:\Program Files\IAR Systems\Embedded Workbench 9.2_2\arm\inc\c
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\utils\cmsis\pic32cx\include
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\utils\cmsis\pic32cx\include
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\history
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\history
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\presskey
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\presskey
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\utils\fpu
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\utils\fpu
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\icm
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\icm
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\common\services\ioport
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\common\services\ioport
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\boards\pic32cxmtc_db
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\boards\pic32cxmtc_db
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\slcdc
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\slcdc
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\utils
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\utils
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\rtt
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\rtt
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\common\boards
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\common\boards
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\qspi\pic32cx
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\qspi\pic32cx
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\pdc
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\pdc
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\boards
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\boards
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\utils\cmsis\pic32cx\source\templates
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\utils\cmsis\pic32cx\source\templates
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\uart
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\uart
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\chipid
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\chipid
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\rtc
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\rtc
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\utils\preprocessor
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\utils\preprocessor
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\supc\pic32cx
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\supc\pic32cx
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\metrology
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\metrology
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\energy
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\energy
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\tou
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\tou
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\gpbr
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\gpbr
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\common\utils
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\common\utils
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\event
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\event
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\usart
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\usart
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\cmcc
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\cmcc
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\common\services\serial\pic32cx_uart
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\common\services\serial\pic32cx_uart
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\common\components\memory\qspi_flash\sst26vfxxx
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\common\components\memory\qspi_flash\sst26vfxxx
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\common\services\delay
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\common\services\delay
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\sfr
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\sfr
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\components\display\cl010
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\components\display\cl010
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\rtcproc
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\rtcproc
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\command
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\command
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\display
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\display
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\common\services\clock
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\common\services\clock
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\flexcom
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\flexcom
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\pmc\pic32cx
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\pmc\pic32cx
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\ipc
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\ipc
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\efc
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\efc
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\pio\pic32cx
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\pio\pic32cx
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\utils\header_files
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\utils\header_files
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\demand
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\demand
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\coproc
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\coproc
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\common\services\serial
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\common\services\serial
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\matrix\pic32cx
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\matrix\pic32cx
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\utils
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\utils
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\common\utils\stdio\stdio_serial
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\common\utils\stdio\stdio_serial
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\rstc
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\rstc
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\kenerl
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\kenerl
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\common\services\sleepmgr
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\common\services\sleepmgr
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\dwdt
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\sam\drivers\dwdt
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\basetimer
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\basetimer
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\extmem
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_app\extmem
 -I
-C:\Users\Trinidad\Downloads\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar
+C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\pic32cx2051mtc128_pic32cxmtc_db\iar
 -I
-C:\Program Files\IAR Systems\Embedded Workbench 9.2\arm\CMSIS\Core\Include
+C:\Program Files\IAR Systems\Embedded Workbench 9.2_2\arm\CMSIS\Core\Include
 -I
-C:\Program Files\IAR Systems\Embedded Workbench 9.2\arm\CMSIS\DSP\Include
+C:\Program Files\IAR Systems\Embedded Workbench 9.2_2\arm\CMSIS\DSP\Include
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0
@@ -480,8 +480,8 @@ C:\Program Files\IAR Systems\Embedded Workbench 9.2\arm\CMSIS\DSP\Include
 -D__JMP_BUF_ELEMENT_TYPE__=unsigned long long int
 -D__JMP_BUF_NUM_ELEMENTS__=16
 -D__TID__=0xcf60
--D__VER__=9050001
--D__BUILD_NUMBER__=380
+-D__VER__=9050002
+-D__BUILD_NUMBER__=385
 -D__IAR_SYSTEMS_ICC__=9
 -D_MAX_ALIGNMENT=8
 -D__LITTLE_ENDIAN__=1
@@ -635,9 +635,9 @@ C:\Program Files\IAR Systems\Embedded Workbench 9.2\arm\CMSIS\DSP\Include
 -D__PIC32CX2051MTC128__=1
 -DBOARD=PIC32CXMTC_DB
 -DARM_MATH_CM4=1
--D_DLIB_CONFIG_FILE_HEADER_NAME="C:\Program Files\IAR Systems\Embedded Workbench 9.2\arm\inc\c\DLib_Config_Full.h"
--D_DLIB_CONFIG_FILE_STRING="C:\\Program Files\\IAR Systems\\Embedded Workbench 9.2\\arm\\inc\\c\\DLib_Config_Full.h"
--D__VERSION__="IAR ANSI C/C++ Compiler V9.50.1.380/W64 for ARM"
+-D_DLIB_CONFIG_FILE_HEADER_NAME="C:\Program Files\IAR Systems\Embedded Workbench 9.2_2\arm\inc\c\DLib_Config_Full.h"
+-D_DLIB_CONFIG_FILE_STRING="C:\\Program Files\\IAR Systems\\Embedded Workbench 9.2_2\\arm\\inc\\c\\DLib_Config_Full.h"
+-D__VERSION__="IAR ANSI C/C++ Compiler V9.50.2.385/W64 for ARM"
 -D_VA_DEFINED=
 -D_VA_LIST=struct __va_list
 -D__ICCARM_OLD_DEFINED_VAARGS__=1
