@@ -239,7 +239,7 @@ void RTCProcInit(void)
 	NVIC_SetPriority(RTC_IRQn, 0);
 
 	/* Read TOU data from External memory */
-	ExtMemRead(MEM_REG_RTC_ID, &VRTC);
+	//ExtMemRead(MEM_REG_RTC_ID, &VRTC);
 
 	if (VRTC.key != RTC_KEY_MEM) {
 		// idata is invalid
@@ -288,15 +288,17 @@ void RTCProcInit(void)
 
 	} else {
 		// data from external memory is valid
-		if (_rtc_value_is_later(&VRTC)) {
-			// VRTC value from memory is later than the current RTC value
-			// Update RTC peripheral
-			rtc_set_time(RTC, VRTC.time.hour, VRTC.time.minute, VRTC.time.second);
-			rtc_set_date(RTC, VRTC.date.year, VRTC.date.month, VRTC.date.day, VRTC.date.week);
-		} else {
-			// VRTC value from memory is before than the current RTC value
-			upd_extmem = true;
-		}
+          
+//NO EXTERNAL MEM
+//		if (_rtc_value_is_later(&VRTC)) {
+//			// VRTC value from memory is later than the current RTC value
+//			// Update RTC peripheral
+//			rtc_set_time(RTC, VRTC.time.hour, VRTC.time.minute, VRTC.time.second);
+//			rtc_set_date(RTC, VRTC.date.year, VRTC.date.month, VRTC.date.day, VRTC.date.week);
+//		} else {
+//			// VRTC value from memory is before than the current RTC value
+//			upd_extmem = true;
+//		}
 	}
 
 	/* Set ALARM each minute */
@@ -306,13 +308,15 @@ void RTCProcInit(void)
 	rtc_set_time_event(RTC, 1);
 
 	/* Update RTC timestamp */
-	VRTC.key = RTC_KEY_MEM;
-	rtc_get_time(RTC, &VRTC.time.hour, &VRTC.time.minute, &VRTC.time.second);
-	rtc_get_date(RTC, &VRTC.date.year, &VRTC.date.month, &VRTC.date.day, &VRTC.date.week);
-
-	if (upd_extmem) {
-		ExtMemWrite(MEM_REG_RTC_ID, &VRTC);
-	}
+        
+//NO EXTERNAL MEM        
+//	VRTC.key = RTC_KEY_MEM;
+//	rtc_get_time(RTC, &VRTC.time.hour, &VRTC.time.minute, &VRTC.time.second);
+//	rtc_get_date(RTC, &VRTC.date.year, &VRTC.date.month, &VRTC.date.day, &VRTC.date.week);
+//
+//	if (upd_extmem) {
+//		ExtMemWrite(MEM_REG_RTC_ID, &VRTC);
+//	}
 
 	/* Configure RTC interrupts */
 	rtc_enable_interrupt(RTC, RTC_IER_SECEN | RTC_IER_ALREN | RTC_IER_TIMEN);

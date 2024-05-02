@@ -603,40 +603,40 @@ int main(void)
 	configure_tamper_fwup();
 
 	/* Enable VDDIO Supply monitor */
-	configure_supply_monitor();
+	//configure_supply_monitor();
 
 	/* Task Initialize queue */
 	TaskInit();
 
 	/* Init LCD */
-	DisplayInit();
-	/* Configure display time loop */
-	DisplaySetTimerLoop(3);
-	/* Configure display measurements */
-	DisplayAddLoopInfo(DISPLAY_BOARD_ID);
-	DisplayAddLoopInfo(DISPLAY_VERSION);
-	DisplayAddLoopInfo(DISPLAY_TOTAL_ENERGY);
-	DisplayAddLoopInfo(DISPLAY_TOU1_ENERGY);
-	DisplayAddLoopInfo(DISPLAY_TOU2_ENERGY);
-	DisplayAddLoopInfo(DISPLAY_TOU3_ENERGY);
-	DisplayAddLoopInfo(DISPLAY_TOU4_ENERGY);
-	DisplayAddLoopInfo(DISPLAY_RTC_TIME);
-	DisplayAddLoopInfo(DISPLAY_RTC_DATE);
-	DisplayAddLoopInfo(DISPLAY_VA_RMS);
-	DisplayAddLoopInfo(DISPLAY_VB_RMS);
-#if BOARD==PIC32CXMTC_DB
-	DisplayAddLoopInfo(DISPLAY_VC_RMS);
-#endif
-	DisplayAddLoopInfo(DISPLAY_IA_RMS);
-	DisplayAddLoopInfo(DISPLAY_IB_RMS);
-#if BOARD==PIC32CXMTC_DB
-	DisplayAddLoopInfo(DISPLAY_IC_RMS);
-#endif
-	DisplayAddLoopInfo(DISPLAY_TOTAL_MAX_DEMAND);
-	DisplayAddLoopInfo(DISPLAY_TOU1_MAX_DEMAND);
-	DisplayAddLoopInfo(DISPLAY_TOU2_MAX_DEMAND);
-	DisplayAddLoopInfo(DISPLAY_TOU3_MAX_DEMAND);
-	DisplayAddLoopInfo(DISPLAY_TOU4_MAX_DEMAND);
+//	DisplayInit();
+//	/* Configure display time loop */
+//	DisplaySetTimerLoop(3);
+//	/* Configure display measurements */
+//	DisplayAddLoopInfo(DISPLAY_BOARD_ID);
+//	DisplayAddLoopInfo(DISPLAY_VERSION);
+//	DisplayAddLoopInfo(DISPLAY_TOTAL_ENERGY);
+//	DisplayAddLoopInfo(DISPLAY_TOU1_ENERGY);
+//	DisplayAddLoopInfo(DISPLAY_TOU2_ENERGY);
+//	DisplayAddLoopInfo(DISPLAY_TOU3_ENERGY);
+//	DisplayAddLoopInfo(DISPLAY_TOU4_ENERGY);
+//	DisplayAddLoopInfo(DISPLAY_RTC_TIME);
+//	DisplayAddLoopInfo(DISPLAY_RTC_DATE);
+//	DisplayAddLoopInfo(DISPLAY_VA_RMS);
+//	DisplayAddLoopInfo(DISPLAY_VB_RMS);
+//#if BOARD==PIC32CXMTC_DB
+//	DisplayAddLoopInfo(DISPLAY_VC_RMS);
+//#endif
+//	DisplayAddLoopInfo(DISPLAY_IA_RMS);
+//	DisplayAddLoopInfo(DISPLAY_IB_RMS);
+//#if BOARD==PIC32CXMTC_DB
+//	DisplayAddLoopInfo(DISPLAY_IC_RMS);
+//#endif
+//	DisplayAddLoopInfo(DISPLAY_TOTAL_MAX_DEMAND);
+//	DisplayAddLoopInfo(DISPLAY_TOU1_MAX_DEMAND);
+//	DisplayAddLoopInfo(DISPLAY_TOU2_MAX_DEMAND);
+//	DisplayAddLoopInfo(DISPLAY_TOU3_MAX_DEMAND);
+//	DisplayAddLoopInfo(DISPLAY_TOU4_MAX_DEMAND);
 
 	/* Init External Memory */
 	ExtMemInit();
