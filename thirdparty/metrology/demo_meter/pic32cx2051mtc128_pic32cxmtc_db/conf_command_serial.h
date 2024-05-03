@@ -79,7 +79,7 @@
 /** Command UART Interface */
 #define CONF_ESP_UART_ID            ID_FLEXCOM3
 /** Command UART Baudrate setting */
-#define CONF_ESP_UART_BAUDRATE      (9600UL) //(115200UL)
+#define CONF_ESP_UART_BAUDRATE      (115200UL)
 /** Command UART Parity setting */
 #define CONF_ESP_UART_PARITY        US_MR_PAR_NO
 /** Command UART Char Length setting */
