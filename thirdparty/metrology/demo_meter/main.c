@@ -488,10 +488,10 @@ void normal_mode(void)
 			VCalibration.har_order = VCalibration.har_order & 0x7F;
 
 			/* Update Energy values */
-			EnergyProcess();
+			//EnergyProcess();  //NO EXTERNAL MEM
                         
                         /* Update Demand values */
-                        DemandUpdate(VAFE.RMS[Pt]);
+                        //DemandUpdate(VAFE.RMS[Pt]); //NO EXTERNAL MEM
 		}
 
 		/* Check TAMPER events */
@@ -609,6 +609,8 @@ int main(void)
 	TaskInit();
 
 	/* Init LCD */
+        
+//NO DISPLAY        
 //	DisplayInit();
 //	/* Configure display time loop */
 //	DisplaySetTimerLoop(3);
@@ -639,7 +641,7 @@ int main(void)
 //	DisplayAddLoopInfo(DISPLAY_TOU4_MAX_DEMAND);
 
 	/* Init External Memory */
-	ExtMemInit();
+	//ExtMemInit(); //NO EXTERNAL MEM
 
 	/* Init RTC */
 	RTCProcInit();
@@ -647,20 +649,21 @@ int main(void)
 	/* Init presskey */
 	PressKeyInit();
 
-	/* Init TOU */
-	TOUInit();
-
-	/* Init Energy */
-	EnergyInit();
-
-	/* History Init */
-	HistoryInit();
-
-	/* Init Demand */
-	DemandInit();
-
-	/* Initialization of the System Events */
-	EventInit();
+//NO EXTERNAL MEM
+//	/* Init TOU */
+//       	TOUInit();
+//
+//	/* Init Energy */
+//	EnergyInit();
+//
+//	/* History Init */
+//	HistoryInit();
+//
+//	/* Init Demand */
+//	DemandInit();
+//
+//	/* Initialization of the System Events */
+//	EventInit();
 
 	/* Communication Init */
 	CommandInit();

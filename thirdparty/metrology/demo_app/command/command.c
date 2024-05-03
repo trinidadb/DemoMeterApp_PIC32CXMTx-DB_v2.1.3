@@ -2257,8 +2257,8 @@ void CONF_ESP_UART_Handler(void)
 		ul_cnt++;
 	}
         else if(esp_write_count == 7){
-                //_print_uart_par();
-                CommandSendEspMsg("AT");
+                _print_uart_par();
+                //CommandSendEspMsg("AT");
                 esp_write_count = 0;
         }
 }
@@ -2289,22 +2289,22 @@ static void _print_uart_par(void)
       if (VAFE.ST.BIT.qb_dir) { signB = '-'; }
       if (VAFE.ST.BIT.qc_dir) { signC = '-'; }
       /* Read Reactive Power */  
-      snprintf(message, sizeof(message), "ReactivePower: Qt=%c%.1fVar Qa=%c%.1fVar Qb=%c%.1fVar Qc=%c%.1fVar\r\n", signT, (float)VAFE.RMS[Qt]/10, signA, (float)VAFE.RMS[Qa]/10, signB, (float)VAFE.RMS[Qb]/10, signC, (float)VAFE.RMS[Qc]/10);
-      CommandSendEspMsg(message);
+      //snprintf(message, sizeof(message), "ReactivePower: Qt=%c%.1fVar Qa=%c%.1fVar Qb=%c%.1fVar Qc=%c%.1fVar\r\n", signT, (float)VAFE.RMS[Qt]/10, signA, (float)VAFE.RMS[Qa]/10, signB, (float)VAFE.RMS[Qb]/10, signC, (float)VAFE.RMS[Qc]/10);
+      //CommandSendEspMsg(message);
 
       /* Get signs of the measurements */
       if (VAFE.ST.BIT.pt_dir) { signT = '-'; }
       if (VAFE.ST.BIT.pa_dir) { signA = '-'; }
       if (VAFE.ST.BIT.pb_dir) { signB = '-'; }
       if (VAFE.ST.BIT.pc_dir) { signC = '-'; }
-      snprintf(message, sizeof(message), "ActivePower: Pt=%c%.1fW Pa=%c%.1fW Pb=%c%.1fW Pc=%c%.1fW\r\n",signT, (float)VAFE.RMS[Pt]/10, signA, (float)VAFE.RMS[Pa]/10, signB, (float)VAFE.RMS[Pb]/10, signC, (float)VAFE.RMS[Pc]/10);
-      CommandSendEspMsg(message); 
+      //snprintf(message, sizeof(message), "ActivePower: Pt=%c%.1fW Pa=%c%.1fW Pb=%c%.1fW Pc=%c%.1fW\r\n",signT, (float)VAFE.RMS[Pt]/10, signA, (float)VAFE.RMS[Pa]/10, signB, (float)VAFE.RMS[Pb]/10, signC, (float)VAFE.RMS[Pc]/10);
+      //CommandSendEspMsg(message); 
       
-      snprintf(message, sizeof(message), "ApparentPower: St=%.1fVA Sa=%.1fVA Sb=%.1fVA Sc=%.1fVA\r\n",(float)VAFE.RMS[St]/10, (float)VAFE.RMS[Sa]/10, (float)VAFE.RMS[Sb]/10, (float)VAFE.RMS[Sc]/10);
-      CommandSendEspMsg(message);
+      //snprintf(message, sizeof(message), "ApparentPower: St=%.1fVA Sa=%.1fVA Sb=%.1fVA Sc=%.1fVA\r\n",(float)VAFE.RMS[St]/10, (float)VAFE.RMS[Sa]/10, (float)VAFE.RMS[Sb]/10, (float)VAFE.RMS[Sc]/10);
+      //CommandSendEspMsg(message);
       
-      snprintf(message, sizeof(message), "Frequency: Freq=%.2fHz\r\n", (float)VAFE.RMS[Freq]/100);
-      CommandSendEspMsg(message);
+      //snprintf(message, sizeof(message), "Frequency: Freq=%.2fHz\r\n", (float)VAFE.RMS[Freq]/100);
+      //CommandSendEspMsg(message);
       
       /* Get signs of the measurements */
       if (VAFE.RMS[AngleA] & 0x80000000) { signA = '-'; }
@@ -2312,8 +2312,8 @@ static void _print_uart_par(void)
       if (VAFE.RMS[AngleC] & 0x80000000) { signC = '-'; }
       if (VAFE.RMS[AngleN] & 0x80000000) { signN = '-'; }
       /* Read Angle */
-      snprintf(message, sizeof(message), "VoltageAndCurrentAngle: Angle_A=%c%.3f Angle_B=%c%.3f Angle_C=%c%.3f Angle_N=%c%.3f\r\n", signA, (float)(VAFE.RMS[AngleA] & 0xFFFFFFF)/100000, signB, (float)(VAFE.RMS[AngleB] & 0xFFFFFFF)/100000, signC, (float)(VAFE.RMS[AngleC] & 0xFFFFFFF)/100000, signN, (float)(VAFE.RMS[AngleN] & 0xFFFFFFF)/100000);
-      CommandSendEspMsg(message);
+      //snprintf(message, sizeof(message), "VoltageAndCurrentAngle: Angle_A=%c%.3f Angle_B=%c%.3f Angle_C=%c%.3f Angle_N=%c%.3f\r\n", signA, (float)(VAFE.RMS[AngleA] & 0xFFFFFFF)/100000, signB, (float)(VAFE.RMS[AngleB] & 0xFFFFFFF)/100000, signC, (float)(VAFE.RMS[AngleC] & 0xFFFFFFF)/100000, signN, (float)(VAFE.RMS[AngleN] & 0xFFFFFFF)/100000);
+      //CommandSendEspMsg(message);
 }
 
 /**
@@ -2338,21 +2338,22 @@ void CommandInit(void)
 	/* Init comprocess data */
 	memset(&VCom, 0, sizeof(command_t));
 
-	/* Get METER ID for External Memory (user defined value) */
-	ExtMemRead(MEM_REG_COMMS_ID, &com_temp);
-	if (com_temp.key == SECURE_KEY)
-	{
-		/* Data validated */
-		memcpy(VCom.meterID, com_temp.meterID, METER_ID_SIZE);
-
-	} else {
-		/* Data is not found. Erase full external memory */
-		ExtMemFullErase();
-		/* Set data by default. */
-		ExtMemGetUniqueId(&VCom.meterID[0], 6);
-		VCom.key = SECURE_KEY;
-		ExtMemWrite(MEM_REG_COMMS_ID, &VCom);
-	}
+//NO EXTERNAL MEM
+//	/* Get METER ID for External Memory (user defined value) */
+//	ExtMemRead(MEM_REG_COMMS_ID, &com_temp);
+//	if (com_temp.key == SECURE_KEY)
+//	{
+//		/* Data validated */
+//		memcpy(VCom.meterID, com_temp.meterID, METER_ID_SIZE);
+//
+//	} else {
+//		/* Data is not found. Erase full external memory */
+//		ExtMemFullErase();
+//		/* Set data by default. */
+//		ExtMemGetUniqueId(&VCom.meterID[0], 6);
+//		VCom.key = SECURE_KEY;
+//		ExtMemWrite(MEM_REG_COMMS_ID, &VCom);
+//	}
 
 	/* Set Callback for Harmonic calculations */
 	MetrologySetHarmonicsCallback(_har_callback);

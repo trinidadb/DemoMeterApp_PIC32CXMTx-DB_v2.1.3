@@ -1059,7 +1059,8 @@ uint32_t MetrologyInit(void)
 	__enable_irq();
 
 	/* Read Metrology data from External memory */
-	ExtMemRead(MEM_REG_METROLOGY_ID, &VMetrology);
+	//ExtMemRead(MEM_REG_METROLOGY_ID, &VMetrology); //NO EXTERNAL MEM
+        VMetrology.DSP_INIT_FLAG = 0xFFFFFFFF; //NO EXTERNAL MEM - ADD
 	_metrology_set_ctrl_status(iSReset);
         if (VMetrology.DSP_INIT_FLAG == 0xFFFFFFFF || VMetrology.DSP_CTRL.ATSENSE_CTRL_28_2B.WORD != 0x03 ) {
 		/* External Memory is empty or stored values are not correct */
@@ -1117,7 +1118,7 @@ uint32_t MetrologyInit(void)
 
 	if (mem_update) {
 		/* Update Metrology data to External memory */
-		ExtMemWrite(MEM_REG_METROLOGY_ID, &VMetrology);
+		//ExtMemWrite(MEM_REG_METROLOGY_ID, &VMetrology);  //NO EXTERNAL MEM
 	}
 
 	return (1);
@@ -1557,7 +1558,7 @@ void MetrologyCalibMeter(void)
 		ptr_mem_reg_in->FEATURE_CTRL0.WORD = VMetrology.DSP_CTRL.FEATURE_CTRL0.WORD;
 
 		/* Update calibration data to External memory */
-		ExtMemWrite(MEM_REG_METROLOGY_ID, &VMetrology);
+		//ExtMemWrite(MEM_REG_METROLOGY_ID, &VMetrology); //NO EXTERNAL MEM
 
 		if (pf_met_cal_callback) {
 			pf_met_cal_callback(0);

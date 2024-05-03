@@ -124,66 +124,68 @@ void RTC_Handler(void)
 {
 	uint32_t ul_status = rtc_get_status(RTC);
 
-	if ((ul_status & RTC_SR_TIMEV) == RTC_SR_TIMEV) {
-		uint32_t new_day, new_month;
-
-		/** 1 Interrupt per HOUR **/
-		rtc_disable_interrupt(RTC, RTC_IDR_TIMDIS);
-		rtc_clear_status(RTC, RTC_SCCR_TIMCLR);
-		rtc_enable_interrupt(RTC, RTC_IER_TIMEN);
-
-		/* Checking the day changing to handle history data */
-		rtc_get_date(RTC, 0, 0, &new_day, 0);
-		if (new_day != VRTC.date.day) {
-			/* Checking the month changing to handle history data */
-			rtc_get_date(RTC, 0, &new_month, 0, 0);
-			if (new_month != VRTC.date.month) {
-				VHistory.status.clear_month = (uint8_t)new_month;
-				VDemand.clear_month = (uint8_t)new_month;
-			} else {
-				VHistory.status.clear_day = (uint8_t)new_day;
-			}
-
-			/* Update VRTC date */
-			rtc_get_date(RTC, &VRTC.date.year, &VRTC.date.month, &VRTC.date.day, &VRTC.date.week);
-		}
-                
-                /* Launch History Task */
-		VHistory.status.upd_energy = 1;
-		TaskPutIntoQueue(HistoryProcess);
-                
-                /* Set Energy flag to store energy in external memory in next EnergyProcess call */
-		VEnergyCtrl.mem_update = MEM_UPDATE_YES;
-
-		/** Launch Tasks per HOUR **/
-
-		LOG_APP_DEMO_DEBUG(("RTC_Handler: RTC_SR_TIMEV[%d]\r\n", (uint8_t)VRTC.time.hour));
-
-	} else if ((ul_status & RTC_SR_ALARM) == RTC_SR_ALARM) {
-		/** 1 Interrupt per MINUTE **/
-		/* Disable RTC interrupt */
-		rtc_disable_interrupt(RTC, RTC_IDR_ALRDIS);
-		/* Clear Status */
-		rtc_clear_status(RTC, RTC_SCCR_ALRCLR);
-		/* Enable RTC interrupt */
-		rtc_enable_interrupt(RTC, RTC_IER_ALREN);
-
-		/** Launch Tasks per MINUTE **/
-		/* Check Maximum Demand values */
-		TaskPutIntoQueue(DemandProcess);
-		/* Check Time Slot for the next Energy period. Launch after Energy Process */
-		TaskPutIntoQueue(TOUProcess);
-
-		/* Save RTC value in external memory */
-		if (--suc_rtc_save_min_counter == 0) {
-			suc_rtc_save_min_counter = RTC_MIN_STORE_BACKUP;
-			TaskPutIntoQueue(RTCProcWriteInExtMem);
-		}
-
-		LOG_APP_DEMO_DEBUG(("RTC_Handler: RTC_SR_ALARM[%d]\r\n", (uint8_t)VRTC.time.minute));
-
-	} else if ((ul_status & RTC_SR_SEC) == RTC_SR_SEC) {
-          
+//NO EXTERNAL MEM
+//	if ((ul_status & RTC_SR_TIMEV) == RTC_SR_TIMEV) {
+//		uint32_t new_day, new_month;
+//
+//		/** 1 Interrupt per HOUR **/
+//		rtc_disable_interrupt(RTC, RTC_IDR_TIMDIS);
+//		rtc_clear_status(RTC, RTC_SCCR_TIMCLR);
+//		rtc_enable_interrupt(RTC, RTC_IER_TIMEN);
+//
+//		/* Checking the day changing to handle history data */
+//		rtc_get_date(RTC, 0, 0, &new_day, 0);
+//		if (new_day != VRTC.date.day) {
+//			/* Checking the month changing to handle history data */
+//			rtc_get_date(RTC, 0, &new_month, 0, 0);
+//			if (new_month != VRTC.date.month) {
+//				VHistory.status.clear_month = (uint8_t)new_month;
+//				VDemand.clear_month = (uint8_t)new_month;
+//			} else {
+//				VHistory.status.clear_day = (uint8_t)new_day;
+//			}
+//
+//			/* Update VRTC date */
+//			rtc_get_date(RTC, &VRTC.date.year, &VRTC.date.month, &VRTC.date.day, &VRTC.date.week);
+//		}
+//                
+//                /* Launch History Task */
+//		VHistory.status.upd_energy = 1;
+//		TaskPutIntoQueue(HistoryProcess);
+//                
+//                /* Set Energy flag to store energy in external memory in next EnergyProcess call */
+//		VEnergyCtrl.mem_update = MEM_UPDATE_YES;
+//
+//		/** Launch Tasks per HOUR **/
+//
+//		LOG_APP_DEMO_DEBUG(("RTC_Handler: RTC_SR_TIMEV[%d]\r\n", (uint8_t)VRTC.time.hour));
+//
+//	} else if ((ul_status & RTC_SR_ALARM) == RTC_SR_ALARM) {
+//		/** 1 Interrupt per MINUTE **/
+//		/* Disable RTC interrupt */
+//		rtc_disable_interrupt(RTC, RTC_IDR_ALRDIS);
+//		/* Clear Status */
+//		rtc_clear_status(RTC, RTC_SCCR_ALRCLR);
+//		/* Enable RTC interrupt */
+//		rtc_enable_interrupt(RTC, RTC_IER_ALREN);
+//
+//		/** Launch Tasks per MINUTE **/
+//		/* Check Maximum Demand values */
+//		TaskPutIntoQueue(DemandProcess);
+//		/* Check Time Slot for the next Energy period. Launch after Energy Process */
+//		TaskPutIntoQueue(TOUProcess);
+//
+//		/* Save RTC value in external memory */
+//		if (--suc_rtc_save_min_counter == 0) {
+//			suc_rtc_save_min_counter = RTC_MIN_STORE_BACKUP;
+//			TaskPutIntoQueue(RTCProcWriteInExtMem);
+//		}
+//
+//		LOG_APP_DEMO_DEBUG(("RTC_Handler: RTC_SR_ALARM[%d]\r\n", (uint8_t)VRTC.time.minute));
+//
+//	} else if ((ul_status & RTC_SR_SEC) == RTC_SR_SEC) {
+        
+        if ((ul_status & RTC_SR_SEC) == RTC_SR_SEC) {
 
 		/** 1 Interrupt per SECOND **/
 		rtc_disable_interrupt(RTC, RTC_IDR_SECDIS);
@@ -200,17 +202,18 @@ void RTC_Handler(void)
 		}
 
 		/** Launch Tasks per SECOND **/
-		TaskPutIntoQueue(EventProcess);
+		//TaskPutIntoQueue(EventProcess); //NO EXTERNAL MEM
                 esp_write_count++; NVIC_SetPendingIRQ(CONF_ESP_UART_IRQn);
 		if (VCom.lamptimer) {
 			VCom.lamptimer--;
 		}
 
-                if (--VDisplay.timer == 0) {
-                        TaskPutIntoQueue(DisplayChangeInfo);
-                } else {
-                        TaskPutIntoQueue(DisplayProcess);
-                }
+//NO DISPLAY
+//                if (--VDisplay.timer == 0) {
+//                        TaskPutIntoQueue(DisplayChangeInfo);
+//                } else {
+//                        TaskPutIntoQueue(DisplayProcess);
+//                }
 
 		LOG_APP_DEMO_DEBUG(("RTC_Handler: RTC_SR_SEC[%02d/%02d %02d:%02d:%02d]\r\n",
 			(uint8_t)VRTC.date.month, (uint8_t)VRTC.date.day,
@@ -300,12 +303,13 @@ void RTCProcInit(void)
 //			upd_extmem = true;
 //		}
 	}
-
-	/* Set ALARM each minute */
-	rtc_set_time_alarm(RTC, 0, 0, 0, 0, 1, 0);
-
-	/* Set TIME EVENT each hour */
-	rtc_set_time_event(RTC, 1);
+        
+//NO EXTERNAL MEM
+//	/* Set ALARM each minute */
+//	rtc_set_time_alarm(RTC, 0, 0, 0, 0, 1, 0);
+//
+//	/* Set TIME EVENT each hour */
+//	rtc_set_time_event(RTC, 1);
 
 	/* Update RTC timestamp */
         
@@ -319,7 +323,7 @@ void RTCProcInit(void)
 //	}
 
 	/* Configure RTC interrupts */
-	rtc_enable_interrupt(RTC, RTC_IER_SECEN | RTC_IER_ALREN | RTC_IER_TIMEN);
+	rtc_enable_interrupt(RTC, RTC_IER_SECEN ); //| RTC_IER_ALREN | RTC_IER_TIMEN); //NO EXTERNAL MEM
 	NVIC_EnableIRQ(RTC_IRQn);
 }
 

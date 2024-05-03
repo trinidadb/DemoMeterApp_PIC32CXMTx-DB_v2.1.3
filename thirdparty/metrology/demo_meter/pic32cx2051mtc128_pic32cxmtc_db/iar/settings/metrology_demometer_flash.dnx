@@ -71,7 +71,7 @@
         <EnforceMemoryConfiguration>1</EnforceMemoryConfiguration>
     </ArmDriver>
     <DebugChecksum>
-        <Checksum>1681716330</Checksum>
+        <Checksum>1672041664</Checksum>
     </DebugChecksum>
     <Trace2>
         <Enabled>0</Enabled>
@@ -137,16 +137,15 @@
     <Breakpoints2>
         <Bp0>_ 0 "EMUL_DATA" "com_cmd" 0 0 0 0 4294967295</Bp0>
         <Bp1>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\demo_app\command\command.c}.2460.4" 0 0 1 "" 0 "" 0</Bp1>
-        <Bp2>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\demo_app\command\command.c}.2459.4" 0 0 1 "" 0 "" 0</Bp2>
-        <Bp3>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\demo_app\command\command.c}.2255.2" 0 0 1 "" 0 "" 0</Bp3>
-        <Bp4>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\demo_app\command\command.c}.2261.17" 0 0 1 "" 0 "" 0</Bp4>
-        <Bp5>_ 1 "EMUL_CODE" "{C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\main.c}.651.2" 0 0 1 "" 0 "" 0</Bp5>
-        <Bp6>_ 1 "EMUL_CODE" "{C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\main.c}.645.2" 0 0 1 "" 0 "" 0</Bp6>
-        <Bp7>_ 1 "EMUL_CODE" "{C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\main.c}.648.2" 0 0 1 "" 0 "" 0</Bp7>
-        <Bp8>_ 1 "EMUL_CODE" "{C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\main.c}.606.2" 0 0 1 "" 0 "" 0</Bp8>
-        <Bp9>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\demo_app\rtcproc\rtcproc.c}.424.2" 0 0 1 "" 0 "" 0</Bp9>
-        <Bp10>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\demo_app\rtcproc\rtcproc.c}.322.2" 0 0 1 "" 0 "" 0</Bp10>
-        <Count>11</Count>
+        <Bp2>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\demo_app\command\command.c}.2460.4" 0 0 1 "" 0 "" 0</Bp2>
+        <Bp3>_ 1 "EMUL_CODE" "{C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\main.c}.647.2" 0 0 1 "" 0 "" 0</Bp3>
+        <Bp4>_ 1 "EMUL_CODE" "{C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\main.c}.647.2" 0 0 1 "" 0 "" 0</Bp4>
+        <Bp5>_ 1 "EMUL_CODE" "{C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\main.c}.669.2" 0 0 1 "" 0 "" 0</Bp5>
+        <Bp6>_ 1 "EMUL_CODE" "{C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\main.c}.675.3" 0 0 1 "" 0 "" 0</Bp6>
+        <Bp7>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\..\..\demo_app\rtcproc\rtcproc.c}.326.2" 0 0 1 "" 0 "" 0</Bp7>
+        <Bp8>_ 1 "EMUL_CODE" "{C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\main.c}.732.4" 0 0 1 "" 0 "" 0</Bp8>
+        <Bp9>_ 1 "EMUL_CODE" "{C:\Users\Trinidad\Documents\Edge Power Meter\DemoMeterApp_PIC32CXMTx-DB_v2.1.3\thirdparty\metrology\demo_meter\main.c}.678.3" 0 0 1 "" 0 "" 0</Bp9>
+        <Count>10</Count>
     </Breakpoints2>
     <Aliases>
         <Count>0</Count>
