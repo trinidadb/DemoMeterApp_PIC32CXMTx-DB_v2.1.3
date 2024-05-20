@@ -430,6 +430,7 @@
  * \name MIKROBUS Port USART pins definitions
  * @{
  */
+/* CHECK - CAMBIAR
 #define PINS_MIKROBUS_USART             (PIO_PA8A_FLEXCOM1_IO0 | PIO_PA9A_FLEXCOM1_IO1)
 #define PINS_MIKROBUS_USART_FLAGS       (IOPORT_MODE_MUX_A)
 

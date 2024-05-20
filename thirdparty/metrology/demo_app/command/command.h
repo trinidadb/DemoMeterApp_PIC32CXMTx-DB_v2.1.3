@@ -35,6 +35,7 @@
 #define COMMAND_H_INCLUDED
 
 extern volatile uint8_t esp_write_count; 
+extern volatile uint8_t zw_write_count; 
 
 /* / @cond 0 */
 /**INDENT-OFF**/

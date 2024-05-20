@@ -1060,13 +1060,17 @@ uint32_t MetrologyInit(void)
 
 	/* Read Metrology data from External memory */
 	//ExtMemRead(MEM_REG_METROLOGY_ID, &VMetrology); //NO EXTERNAL MEM
-        VMetrology.DSP_INIT_FLAG = 0xFFFFFFFF; //NO EXTERNAL MEM - ADD
+        //VMetrology.DSP_INIT_FLAG = 0xFFFFFFFF; //NO EXTERNAL MEM - LINE ADDED BY ME
 	_metrology_set_ctrl_status(iSReset);
-        if (VMetrology.DSP_INIT_FLAG == 0xFFFFFFFF || VMetrology.DSP_CTRL.ATSENSE_CTRL_28_2B.WORD != 0x03 ) {
-		/* External Memory is empty or stored values are not correct */
-		MetrologyLoadDefault();
-		mem_update = 1;
-	}
+        
+//NO EXTERNAL MEM        
+//        if (VMetrology.DSP_INIT_FLAG == 0xFFFFFFFF || VMetrology.DSP_CTRL.ATSENSE_CTRL_28_2B.WORD != 0x03 ) {
+//		/* External Memory is empty or stored values are not correct */
+//		MetrologyLoadDefault();
+//		mem_update = 1;
+//	}
+        
+        MetrologyLoadDefault(); //NO EXTERNAL MEM - LINE ADDED BY ME
 
 	/* Check Capture Memory Address and buffer size*/
 	if (( VMetrology.DSP_CTRL.CAPTURE_ADDR < ( uint32_t )(&VCapture_Buff[0])) || ( ((VMetrology.DSP_CTRL.CAPTURE_ADDR + VMetrology.DSP_CTRL.CAPTURE_BUFF_SIZE.WORD*4) > (MET_CAPTURE_BUFF_LEN*4 + ( uint32_t )(&VCapture_Buff[0]))) )) {
@@ -1093,7 +1097,7 @@ uint32_t MetrologyInit(void)
 			break;
 		}
 
-		delay_ms(1);
+		delay_ms(2);
 	}
 
 	if (i >= 1500) {
