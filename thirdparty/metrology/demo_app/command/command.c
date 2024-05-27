@@ -2242,11 +2242,6 @@ void CONF_ZW_UART_Handler(void)
 		TaskPutIntoQueue(CommandZwProcess);
 		ul_cnt++;
 	}
-        else if(zw_write_count == 7){
-                //_print_uart_par();
-                CommandSendZwMsg("AT\n\r");
-                zw_write_count = 0;
-        }
 }
 
 
@@ -2262,11 +2257,6 @@ void CONF_ESP_UART_Handler(void)
 		TaskPutIntoQueue(CommandEspProcess);
 		ul_cnt++;
 	}
-        else if(esp_write_count == 7){
-                //_print_uart_par();
-                CommandSendEspMsg("AT\n");
-                esp_write_count = 0;
-        }
 }
 
 
@@ -2340,9 +2330,12 @@ void CONF_OPTO_UART_Handler(void)
 void CommandInit(void)
 {
 	command_t com_temp;
+        const char *meterIDValue = "l6.K&\"";
 
 	/* Init comprocess data */
 	memset(&VCom, 0, sizeof(command_t));
+        memcpy(VCom.meterID, meterIDValue, METER_ID_SIZE); //NO EXTERNAL MEM - ADD
+        VCom.key = SECURE_KEY; //NO EXTERNAL MEM - ADD
 
 //NO EXTERNAL MEM
 //	/* Get METER ID for External Memory (user defined value) */
@@ -2646,18 +2639,18 @@ void CommandZwProcess(void)
 		/* Update State */
 		com_ptr->state[buf_idx] = SEND;
 
-		if (com_ptr->echo_pending[buf_idx]) {
-			/* Clear Echo Pending flag */
-			com_ptr->echo_pending[buf_idx] = 0;
-			/* Send ECHO command */
-			com_ptr->send_len = sprintf((char *)com_ptr->send_buff, "%s\r\n", (char *)&com_ptr->rcv_buff[buf_idx]);
-		} else {
-			/* Send CR/LF */
-			com_ptr->send_buff[0] = 0x0D;
-			com_ptr->send_buff[1] = 0x0A;
-			com_ptr->send_len = 2;
-		}
-		_send_data(COMPROC_ZW_ID);
+		//if (com_ptr->echo_pending[buf_idx]) {
+		//	/* Clear Echo Pending flag */
+		//	com_ptr->echo_pending[buf_idx] = 0;
+		//	/* Send ECHO command */
+		//	com_ptr->send_len = sprintf((char *)com_ptr->send_buff, "%s\r\n", (char *)&com_ptr->rcv_buff[buf_idx]);
+		//} else {
+		//	/* Send CR/LF */
+		//	com_ptr->send_buff[0] = 0x0D;
+		//	com_ptr->send_buff[1] = 0x0A;
+		//	com_ptr->send_len = 2;
+		//}
+		//_send_data(COMPROC_ZW_ID);
 
 		com_cmd = _get_terminal_cmd(com_ptr->rcv_buff[buf_idx]);
 
@@ -2668,8 +2661,8 @@ void CommandZwProcess(void)
 
 		default:
 			/* Unknown terminal command */
-			com_ptr->send_len = sprintf((char *)com_ptr->send_buff, "%s", "Unsupported Command !\r\n");
-			_send_data(COMPROC_ZW_ID);
+			//com_ptr->send_len = sprintf((char *)com_ptr->send_buff, "%s", "Unsupported Command !\r\n");
+			//_send_data(COMPROC_ZW_ID);
 			break;
 		}
 
@@ -2696,20 +2689,20 @@ void CommandEspProcess(void)
 		/* Update State */
 		com_ptr->state[buf_idx] = SEND;
 
-		if (com_ptr->echo_pending[buf_idx]) {
-			/* Clear Echo Pending flag */
+		//if (com_ptr->echo_pending[buf_idx]) {
+		//	/* Clear Echo Pending flag */
 			com_ptr->echo_pending[buf_idx] = 0;
-			/* Send ECHO command */
-			com_ptr->send_len = sprintf((char *)com_ptr->send_buff, "%s\r\n", (char *)&com_ptr->rcv_buff[buf_idx]);
-		} else {
-			/* Send CR/LF */
-			com_ptr->send_buff[0] = 0x0D;
-			com_ptr->send_buff[1] = 0x0A;
-			com_ptr->send_len = 2;
-		}
-		_send_data(COMPROC_ESP_ID);
+		//	/* Send ECHO command */
+		//	com_ptr->send_len = sprintf((char *)com_ptr->send_buff, "%s\r\n", (char *)&com_ptr->rcv_buff[buf_idx]);
+		//} else {
+		//	/* Send CR/LF */
+		//	com_ptr->send_buff[0] = 0x0D;
+		//	com_ptr->send_buff[1] = 0x0A;
+		//	com_ptr->send_len = 2;
+		//}
+		//_send_data(COMPROC_ESP_ID);
 
-		com_cmd = TER_CMD_PAR; //_get_terminal_cmd(com_ptr->rcv_buff[buf_idx]);
+		com_cmd = _get_terminal_cmd(com_ptr->rcv_buff[buf_idx]);
 
 		switch(com_cmd) {
 		case TER_CMD_PAR:
@@ -2718,8 +2711,8 @@ void CommandEspProcess(void)
 
 		default:
 			/* Unknown terminal command */
-			com_ptr->send_len = sprintf((char *)com_ptr->send_buff, "%s", "Unsupported Command !\r\n");
-			_send_data(COMPROC_ESP_ID);
+			//com_ptr->send_len = sprintf((char *)com_ptr->send_buff, "%s", "Unsupported Command !\r\n");
+			//_send_data(COMPROC_ESP_ID);
 			break;
 		}
 

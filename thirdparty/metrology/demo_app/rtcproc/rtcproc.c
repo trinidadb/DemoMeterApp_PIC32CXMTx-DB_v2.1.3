@@ -50,6 +50,7 @@
 #include "command.h"
 #include "extmem.h"
 #include "conf_command_serial.h"
+#include "delay.h"
 
 /* / @cond 0 */
 /**INDENT-OFF**/
@@ -204,8 +205,19 @@ void RTC_Handler(void)
 
 		/** Launch Tasks per SECOND **/
 		//TaskPutIntoQueue(EventProcess); //NO EXTERNAL MEM
-                //esp_write_count++; if(esp_write_count == 7){NVIC_SetPendingIRQ(CONF_ESP_UART_IRQn);}
-                zw_write_count++; if(zw_write_count == 7){NVIC_SetPendingIRQ(CONF_ZW_UART_IRQn);}
+                esp_write_count++; 
+                if(esp_write_count == 7){
+                  esp_write_count = 0; 
+                  //CommandSendEspMsg("\r\nAT\r\n");
+                  //delay_ms(7);
+                }
+                zw_write_count++;
+                if(zw_write_count == 7){
+                  zw_write_count = 0; 
+                  CommandSendZwMsg("\x01\x09\x00\x13\x02\x02\x25\x01\xFF\x25\x00");
+                  delay_ms(7);
+                }
+                //zw_write_count++; if(zw_write_count == 7){NVIC_SetPendingIRQ(CONF_ZW_UART_IRQn);}
 		if (VCom.lamptimer) {
 			VCom.lamptimer--;
 		}
