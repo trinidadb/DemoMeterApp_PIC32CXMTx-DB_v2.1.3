@@ -208,8 +208,8 @@ void RTC_Handler(void)
                 esp_write_count++; 
                 if(esp_write_count == 7){
                   esp_write_count = 0; 
-                  //CommandSendEspMsg("\r\nAT\r\n");
-                  //delay_ms(7);
+                  CommandSendEspMsg("\r\nAT\r\n");
+                  delay_ms(7);
                 }
                 zw_write_count++;
                 if(zw_write_count == 7){
@@ -217,7 +217,6 @@ void RTC_Handler(void)
                   CommandSendEspMsg("\r\nAT\r\n");
                   delay_ms(7);
                 }
-                //zw_write_count++; if(zw_write_count == 7){NVIC_SetPendingIRQ(CONF_ZW_UART_IRQn);}
 		if (VCom.lamptimer) {
 			VCom.lamptimer--;
 		}
