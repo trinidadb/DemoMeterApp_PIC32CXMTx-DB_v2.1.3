@@ -214,7 +214,7 @@ void RTC_Handler(void)
                 zw_write_count++;
                 if(zw_write_count == 7){
                   zw_write_count = 0; 
-                  CommandSendZwMsg("\x01\x09\x00\x13\x02\x02\x25\x01\xFF\x25\x00");
+                  CommandSendEspMsg("\r\nAT\r\n");
                   delay_ms(7);
                 }
                 //zw_write_count++; if(zw_write_count == 7){NVIC_SetPendingIRQ(CONF_ZW_UART_IRQn);}

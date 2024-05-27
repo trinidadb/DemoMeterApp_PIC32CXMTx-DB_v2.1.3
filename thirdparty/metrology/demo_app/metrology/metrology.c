@@ -1097,7 +1097,7 @@ uint32_t MetrologyInit(void)
 			break;
 		}
 
-		delay_ms(2);
+		delay_ms(1);
 	}
 
 	if (i >= 1500) {
