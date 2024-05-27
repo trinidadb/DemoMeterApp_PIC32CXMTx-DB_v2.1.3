@@ -147,7 +147,6 @@ typedef struct {
 typedef enum {
 	COMPROC_CONSOLE_ID = 0,
 	COMPROC_OPTO_ID,
-        COMPROC_ZW_ID,
         COMPROC_ESP_ID,
 //	COMPROC_XPLAIN_ID,     /* Reserved for future uses */
 //	COMPROC_MIKROBUS_ID,   /* Reserved for future uses */
