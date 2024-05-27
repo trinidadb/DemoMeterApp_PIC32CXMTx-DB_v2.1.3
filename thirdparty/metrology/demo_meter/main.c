@@ -250,21 +250,9 @@ static void configure_command_usart(void)
 	usart_serial_init((Usart *)CONF_COMMAND_UART, &uart_serial_options);
 }
 
-static void configure_zw_usart(void)
-{     
-        /* UART1 */
-        usart_serial_options_t uart_serial_options = {
-		.baudrate = CONF_ZW_UART_BAUDRATE,
-		.charlength = CONF_ZW_UART_CHAR_LENGTH,
-		.paritytype = CONF_ZW_UART_PARITY,
-		.stopbits = CONF_ZW_UART_STOP_BITS,
-	};
-
-        /* Configure console UART3. */
-	sysclk_enable_peripheral_clock(CONF_ZW_UART_ID);
-	usart_serial_init((Usart *)CONF_ZW_UART, &uart_serial_options);
-}
-
+/**
+ * \brief Configure the esp console UART.
+ */
 static void configure_esp_usart(void)
 {     
         /* UART3 */
@@ -586,10 +574,7 @@ int main(void)
 #endif
 
 	/* Configure serial command console */
-	configure_command_usart();
-        
-        /* Configure serial zw usart */
-	configure_zw_usart();        
+	configure_command_usart();  
         
         /* Configure serial esp usart */
 	configure_esp_usart();

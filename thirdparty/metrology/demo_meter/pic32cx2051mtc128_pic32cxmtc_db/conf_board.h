@@ -48,9 +48,6 @@
 #define CONF_BOARD_UART_CONSOLE
 
 /** Enable Serial Command Port. (Flexcom1) */
-#define CONF_BOARD_UART_ZW  
-
-/** Enable Serial Command Port. (Flexcom3) */
 #define CONF_BOARD_UART_ESP  
 
 /** Enable Serial Opto Port. (UART) */

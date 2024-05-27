@@ -106,12 +106,6 @@ static uint8_t _send_data(com_port_id_t proc_id)
 				return false;
 			}
 		}
-         } else if (proc_id == COMPROC_ZW_ID) {
-		while (!usart_is_tx_buf_empty(CONF_ZW_UART)) {
-			if (!timeout--) {
-				return false;
-			}
-		}       
          } else if (proc_id == COMPROC_ESP_ID) {
 		while (!usart_is_tx_buf_empty(CONF_ESP_UART)) {
 			if (!timeout--) {
@@ -2236,19 +2230,6 @@ void CONF_COMMAND_UART_Handler(void)
  * \brief ESP UART interrupt Handler
  */
 //uint32_t ul_cnt = 0;
-void CONF_ZW_UART_Handler(void)
-{
-	if (_process_rcv_data(COMPROC_ZW_ID)) {
-		TaskPutIntoQueue(CommandZwProcess);
-		ul_cnt++;
-	}
-}
-
-
-/**
- * \brief ESP UART interrupt Handler
- */
-//uint32_t ul_cnt = 0;
 static void _print_uart_par(void);
 
 void CONF_ESP_UART_Handler(void)
@@ -2369,13 +2350,6 @@ void CommandInit(void)
 	/* Init PDC for Console port */
 	VCom.comport[COMPROC_CONSOLE_ID].p_usart = CONF_COMMAND_UART;
 	VCom.comport[COMPROC_CONSOLE_ID].pdc_base = usart_get_pdc_base(CONF_COMMAND_UART);
-        
-        
-         /* Configure ASCII protocol for usart esp port */
-	VCom.comport[COMPROC_ZW_ID].protocolmode = ASCII_PROTOCOL;
-	/* Init PDC for Console port */
-	VCom.comport[COMPROC_ZW_ID].p_usart = CONF_ZW_UART;
-	VCom.comport[COMPROC_ZW_ID].pdc_base = usart_get_pdc_base(CONF_ZW_UART);
      
         /* Configure ASCII protocol for usart esp port */
 	VCom.comport[COMPROC_ESP_ID].protocolmode = ASCII_PROTOCOL;
@@ -2399,13 +2373,6 @@ void CommandInit(void)
 	usart_enable_interrupt((Usart *)CONF_OPTO_UART, US_IER_RXRDY);
 	/* Enable interrupt */
 	NVIC_EnableIRQ(CONF_OPTO_UART_IRQn);
-        
-        
-        /* Enable receiver interrupt */
-	usart_enable_interrupt(CONF_ZW_UART, US_IER_RXRDY);
-	/* Enable interrupt */
-	NVIC_EnableIRQ(CONF_ZW_UART_IRQn);        
-        
         
         /* Enable receiver interrupt */
 	usart_enable_interrupt(CONF_ESP_UART, US_IER_RXRDY);
@@ -2596,21 +2563,6 @@ void CommandConsoleProcess(void)
 	_send_console_prompt();
 }
 
-static void _process_cmd_rtcr2(com_port_data_t *com_ptr)
-{
-	rtc_t rtc_data;
-
-	rtc_data = VRTC;
-	/* Send Response */
-	com_ptr->send_len = sprintf((char *)com_ptr->send_buff,
-				    "Present RTC is (yy-mm-dd w hh:mm:ss): \r\n%02u-%02u-%02u %u %02u:%02u:%02u\r\n",
-				    rtc_data.date.year - 2000, rtc_data.date.month, rtc_data.date.day, rtc_data.date.week,
-				    rtc_data.time.hour, rtc_data.time.minute, rtc_data.time.second);
-
-	/* Send response to serial com */
-	_send_data(COMPROC_ZW_ID);
-}
-
 static void _process_cmd_rtcr3(com_port_data_t *com_ptr)
 {
 	rtc_t rtc_data;
@@ -2624,56 +2576,6 @@ static void _process_cmd_rtcr3(com_port_data_t *com_ptr)
 
 	/* Send response to serial com */
 	_send_data(COMPROC_ESP_ID);
-}
-
-void CommandZwProcess(void)
-{
-	com_port_data_t *com_ptr;
-	terminal_cmd_t com_cmd;
-	uint8_t buf_idx;
-
-	com_ptr = &VCom.comport[COMPROC_ZW_ID];
-	buf_idx = com_ptr->bufidx^0x01;
-
-	while (com_ptr->state[buf_idx] == PROCESS) {
-		/* Update State */
-		com_ptr->state[buf_idx] = SEND;
-
-		//if (com_ptr->echo_pending[buf_idx]) {
-		//	/* Clear Echo Pending flag */
-		//	com_ptr->echo_pending[buf_idx] = 0;
-		//	/* Send ECHO command */
-		//	com_ptr->send_len = sprintf((char *)com_ptr->send_buff, "%s\r\n", (char *)&com_ptr->rcv_buff[buf_idx]);
-		//} else {
-		//	/* Send CR/LF */
-		//	com_ptr->send_buff[0] = 0x0D;
-		//	com_ptr->send_buff[1] = 0x0A;
-		//	com_ptr->send_len = 2;
-		//}
-		//_send_data(COMPROC_ZW_ID);
-
-		com_cmd = _get_terminal_cmd(com_ptr->rcv_buff[buf_idx]);
-
-		switch(com_cmd) {
-		case TER_CMD_RTCR:
-			_process_cmd_rtcr2(com_ptr);
-			break;
-
-		default:
-			/* Unknown terminal command */
-			//com_ptr->send_len = sprintf((char *)com_ptr->send_buff, "%s", "Unsupported Command !\r\n");
-			//_send_data(COMPROC_ZW_ID);
-			break;
-		}
-
-		/* Update State */
-		com_ptr->state[buf_idx] = FREE;
-		/* Restart Rcv buffer */
-		memset(&com_ptr->rcv_buff[buf_idx], 0, FRAME_MAX_RCV_LEN);
-
-		/* Check the other buffer */
-		buf_idx ^= 0x01;
-	}
 }
 
 void CommandEspProcess(void)
@@ -2736,15 +2638,6 @@ void CommandSendConsoleMsg(const char *msg)
 	if (msg != NULL) {
 		VCom.comport[COMPROC_CONSOLE_ID].send_len = sprintf((char *)VCom.comport[COMPROC_CONSOLE_ID].send_buff, "%s", msg);
 		_send_data(COMPROC_CONSOLE_ID);
-	}
-}
-
-
-void CommandSendZwMsg(const char *msg)
-{
-	if (msg != NULL) {
-		VCom.comport[COMPROC_ZW_ID].send_len = sprintf((char *)VCom.comport[COMPROC_ZW_ID].send_buff, "%s", msg);
-		_send_data(COMPROC_ZW_ID);
 	}
 }
 

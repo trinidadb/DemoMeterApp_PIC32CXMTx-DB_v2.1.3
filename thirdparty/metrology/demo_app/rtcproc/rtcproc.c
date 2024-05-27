@@ -211,12 +211,6 @@ void RTC_Handler(void)
                   CommandSendEspMsg("\r\nAT\r\n");
                   delay_ms(7);
                 }
-                zw_write_count++;
-                if(zw_write_count == 7){
-                  zw_write_count = 0; 
-                  CommandSendEspMsg("\r\nAT\r\n");
-                  delay_ms(7);
-                }
 		if (VCom.lamptimer) {
 			VCom.lamptimer--;
 		}

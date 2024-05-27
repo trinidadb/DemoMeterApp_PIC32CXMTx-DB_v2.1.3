@@ -31,12 +31,12 @@
         <ShowArgs>0</ShowArgs>
     </CallStack>
     <Exceptions>
-        <StopOnUncaught>_ 0</StopOnUncaught>
         <StopOnThrow>_ 0</StopOnThrow>
+        <StopOnUncaught>_ 0</StopOnUncaught>
     </Exceptions>
     <PlDriver>
-        <FirstRun>0</FirstRun>
         <MemConfigValue>C:\Program Files\IAR Systems\Embedded Workbench 9.2_2\arm\config\debugger\Microchip\PIC32CX2051MTC128.ddf</MemConfigValue>
+        <FirstRun>0</FirstRun>
     </PlDriver>
     <JLinkDriver>
         <LeaveTargetRunning>_ 0</LeaveTargetRunning>
@@ -71,7 +71,7 @@
         <EnableCache>0</EnableCache>
     </ArmDriver>
     <DebugChecksum>
-        <Checksum>2070443659</Checksum>
+        <Checksum>97298314</Checksum>
     </DebugChecksum>
     <Trace2>
         <Enabled>0</Enabled>
