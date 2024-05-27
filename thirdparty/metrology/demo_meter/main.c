@@ -707,7 +707,7 @@ int main(void)
 	/* In case of TAMPER detection, this value will be erased */
 	gpbr_write(GPBR0, (uint32_t)APP_GPBR_INIT_FLAG);
 	LOG_APP_DEMO_DEBUG(("Set GPBR0[0x%08x]\r\n", gpbr_read(GPBR0)));
-
+                
 	/* Main loop */
 	while (1) {
 		switch (Vsys.mode) {

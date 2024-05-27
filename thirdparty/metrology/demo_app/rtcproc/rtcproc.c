@@ -50,6 +50,7 @@
 #include "command.h"
 #include "extmem.h"
 #include "conf_command_serial.h"
+#include "delay.h"
 
 /* / @cond 0 */
 /**INDENT-OFF**/
@@ -67,7 +68,8 @@ const uint8_t Day_weekTableD[12] = {6, 2, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4};
 
 static uint8_t suc_rtc_save_min_counter = RTC_MIN_STORE_BACKUP;
 
-extern volatile uint8_t esp_write_count;  
+extern volatile uint8_t esp_write_count;
+extern volatile uint8_t zw_write_count;
 
 /* / @cond 0 */
 /**INDENT-OFF**/
@@ -203,7 +205,18 @@ void RTC_Handler(void)
 
 		/** Launch Tasks per SECOND **/
 		//TaskPutIntoQueue(EventProcess); //NO EXTERNAL MEM
-                esp_write_count++; NVIC_SetPendingIRQ(CONF_ESP_UART_IRQn);
+                esp_write_count++; 
+                if(esp_write_count == 7){
+                  esp_write_count = 0; 
+                  CommandSendEspMsg("\r\nAT\r\n");
+                  delay_ms(7);
+                }
+                zw_write_count++;
+                if(zw_write_count == 7){
+                  zw_write_count = 0; 
+                  CommandSendEspMsg("\r\nAT\r\n");
+                  delay_ms(7);
+                }
 		if (VCom.lamptimer) {
 			VCom.lamptimer--;
 		}
